@@ -1,0 +1,43 @@
+.ux-hash {
+    position: relative;
+    font-size: 12px;
+
+    @at-root %style {
+        overflow: auto;
+        overflow-x: hidden;
+        display: block;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        line-height: inherit;
+        color: inherit;
+        font: inherit;
+        resize: none;
+        outline: none;
+        word-break: initial;
+        white-space: pre-wrap;
+        transform: translate3d(0,0,0);
+    }
+
+    &__textarea {
+        @extend %style;
+        width: 100%;
+    }
+    &__display {
+        @extend %style;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        overflow: hidden;
+        color: transparent;
+        pointer-events: none;
+    }
+
+    &__tag {
+        margin: -.2em;
+        padding: 0 .2em;
+        border-radius: 1em;
+    }
+}

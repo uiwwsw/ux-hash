@@ -1,0 +1,40 @@
+{
+  "name": "ux-hash",
+  "version": "1.0.1",
+  "description": "Library to help you write hashtags in textarea",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uiwwsw/ux-hash.git"
+  },
+  "keywords": [
+    "hash",
+    "tag",
+    "textarea",
+    "mention",
+    "input"
+  ],
+  "author": "uiwwsw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uiwwsw/ux-hash/issues"
+  },
+  "homepage": "https://github.com/uiwwsw/ux-hash#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "typescript": "^3.7.4"
+  }
+}

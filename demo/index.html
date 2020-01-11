@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/ux-hash.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.13/system.js">
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="testTextarea" style="height: 300px;"></div>
+    <script>
+        SystemJS.import('/dist/js/ux-hash.js').then(function(res){
+            var UxHash = res.default;
+            new UxHash('#testTextarea', [{key:'#',bg: 'rgba(23,23,23,.3)', color: '#fff'}]);
+        });
+    </script>
+</body>
+
+</html>
