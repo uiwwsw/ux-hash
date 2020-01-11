@@ -18,9 +18,11 @@ export default class UxHash {
         this.wrapperElement = document.querySelector(this.querySelector) as HTMLDivElement;
         this.wrapperElement.classList.add(this.id);
         this.textareaElement = document.createElement('textarea');
+        this.textareaElement.style.display = 'none';
         this.textareaElement.classList.add(`${this.id}__textarea`);
         this.displayElement = document.createElement('div');
         this.displayElement.classList.add(`${this.id}__display`);
+        this.displayElement.style.display = 'none';
         this.wrapperElement.appendChild(style);
         this.wrapperElement.appendChild(this.textareaElement);
         this.wrapperElement.appendChild(this.displayElement);
@@ -36,7 +38,7 @@ export default class UxHash {
             .${this.id}__textarea, .${this.id}__display {
               overflow: auto;
               overflow-x: hidden;
-              display: block;
+              display: block !important;
               height: 100%;
               margin: 0;
               padding: 0;

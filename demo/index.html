@@ -16,7 +16,8 @@
     <script>
         SystemJS.import('/dist/js/ux-hash.js').then(function(res){
             var UxHash = res.default;
-            new UxHash('#testTextarea', [{key:'#',bg: 'rgba(23,23,23,.3)', color: '#fff'}]);
+            new UxHash('#testTextarea', [{key:'#',bg: '#0000ff66', color: '#fff'},
+            {key:'@',bg: '#f500008f', color: '#fff'}]);
         });
     </script>
 </body>
