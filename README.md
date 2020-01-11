@@ -18,9 +18,9 @@
     const themes: Theme[] = [{key:'#',bg: 'rgba(23,23,23,.3)', color: '#fff'}];
     new UxHash('#test', themes);
 ```
-1. 폰트크기등, 스타일 변경 시
-textarea를 직접 수정하지 않고 
-이벤트 선언된 객체, 즉 `#test`에 스타일을 줍니다.
+1. 폰트크기등, 스타일 변경 시  
+`textarea`를 직접 수정하지 않고   
+이벤트 선언된 객체, 즉 `#test`에 스타일을 줍니다.  
 ```html
     <div id="test" class="test"></div>
 ```
@@ -32,7 +32,9 @@ textarea를 직접 수정하지 않고
     font: ~~~~~;
 }
 ```
-직접 수정해야할 땐, selector > textarea, selector > display로 두개의 셀렉터에 동일한 스타일을 주어야 합니다.
+직접 수정해야할 땐,   
+`selector > textarea, selector > display`로    
+두개의 셀렉터에 동일한 스타일을 주어야 합니다.
 ```css
 .test > textarea,
 .test > div{
@@ -42,10 +44,11 @@ textarea를 직접 수정하지 않고
     font: ~~~~~;
 }
 ```
-1. 이벤트 강제로 주기
-`testarea`에 직접 접근하여 `value`를 변경했거나, 타 라이브러리를 사용하여 값이 변경되었다면  
-hash태그가 생성되지 않을 수 있습니다.  
-이땐 강제로 이벤트를 실행할 수 있습니다.
+1. 이벤트 강제로 주기  
+`textarea`에 직접 접근하여 `value`를 변경했거나,    
+ 타 라이브러리를 사용하여 값이 변경되었다면    
+hash태그가 생성되지 않을 수 있습니다.    
+이땐 강제로 이벤트를 실행할 수 있습니다.  
 ```typescript
     const hash = new UxHash('#test', themes);
     hash.keyEvent();
