@@ -1,6 +1,6 @@
 {
   "name": "ux-hash",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Library to help you write hashtags in textarea",
   "main": "dist/js/ux-hash.min.js",
   "scripts": {

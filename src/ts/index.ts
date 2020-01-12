@@ -25,11 +25,11 @@ export default class UxHash {
     }
 
     makeStyle() {
-        const commonStyle = 'overflow: auto;overflow-x: hidden;display: block !important;height: 100%;margin: 0;padding: 0;border: 0;line-height: inherit;word-spacing: inherit;color: inherit;font: inherit;resize: none;outline: none;word-break: initial;white-space: pre-wrap;transform: translate3d(0, 0, 0);'
+        const commonStyle = 'overflow: auto;overflow-x: hidden;display: block !important;height: 100%;margin: 0;padding: 1em;box-sizing: border-box;border: 0;line-height: inherit;word-spacing: inherit;color: inherit;font: inherit;resize: none;outline: none;word-break: initial;white-space: pre-wrap;transform: translate3d(0, 0, 0);'
         this.wrapperElement.style.position = 'relative';
         this.wrapperElement.style.fontSize = '12px';
         this.textareaElement.setAttribute('style', commonStyle + 'width: 100%;');
-        this.displayElement.setAttribute('style', commonStyle + 'position: absolute;top: 0;right: 0;left: 0;overflow: hidden;color: transparent;pointer-events: none;' );
+        this.displayElement.setAttribute('style', commonStyle + 'z-index:2;position: absolute;top: 0;right: 0;left: 0;overflow: hidden;color: transparent;pointer-events: none;' );
     }
 
     scrollEvent() {

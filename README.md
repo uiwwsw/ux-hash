@@ -3,9 +3,13 @@
 ## textarea에서 해쉬태그를 작성하는데 도움을 주는 라이브러리
 ## Library to help you write hashtags in textarea
 
+## 설치
+`npm i -S ux-hash` 또는 `https://unpkg.com/ux-hash/dist/js/ux-hash.min.js`
+
 ### 사용방법
 
 1. 기본사용
+
 ```html
     <div id="test"></div>
 ```
