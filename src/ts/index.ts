@@ -1,4 +1,4 @@
-export default class UxHash {
+class UxHash {
     private id: string;
     private querySelector: string;
     private wrapperElement: HTMLDivElement;
@@ -25,7 +25,7 @@ export default class UxHash {
     }
 
     makeStyle() {
-        const commonStyle = 'overflow: auto;overflow-x: hidden;display: block !important;height: 100%;margin: 0;padding: 1em;box-sizing: border-box;border: 0;line-height: inherit;word-spacing: inherit;color: inherit;font: inherit;resize: none;outline: none;word-break: initial;white-space: pre-wrap;transform: translate3d(0, 0, 0);'
+        const commonStyle = 'overflow: auto;overflow-x: hidden;display: block !important;height: 100%;margin: 0;padding: 1em;box-sizing: border-box;border: 0;line-height: inherit;word-spacing: inherit;color: inherit;font: inherit;resize: none;outline: none;word-break: initial;white-space: pre-wrap;'
         this.wrapperElement.style.position = 'relative';
         this.wrapperElement.style.fontSize = '12px';
         this.textareaElement.setAttribute('style', commonStyle + 'width: 100%;');
@@ -55,7 +55,7 @@ export default class UxHash {
                 if (index === -1) {
                     res += word;
                 } else {
-                    res += `<span style="margin: -.2em;padding: 0 .2em;border-radius: 1em;color:${colors[index]};background:${bgs[index]};">${word}</span>`
+                    res += `<span style="margin: -.1em;padding: 0 .1em;border-radius: 1em;color:${colors[index]};background:${bgs[index]};">${word}</span>`
                 }
             });
         });
@@ -74,7 +74,7 @@ export default class UxHash {
                 if (index === -1) {
                     res += word;
                 } else {
-                    res += `<span style="margin: -.2em;padding: 0 .2em;border-radius: 1em;color:${this.colors[index]};background:${this.bgs[index]};">${word}</span>`
+                    res += `<span style="margin: -.1em;padding: 0 .1em;border-radius: 1em;color:${this.colors[index]};background:${this.bgs[index]};">${word}</span>`
                 }
             });
         });
@@ -85,4 +85,9 @@ export default class UxHash {
         this.displayElement.innerHTML = this.mask();
         this.scrollEvent();
     }
+}
+type Theme = {
+    bg:string,
+    color:string,
+    key:string
 }

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.13/system.js">
     </script>
+    <script src="../dist/js/ux-hash.regacy.js"></script>
     <title>Document</title>
 </head>
 
@@ -15,11 +16,7 @@
     
 </body>
 <script>
-    SystemJS.import('/dist/js/ux-hash.js').then(function(res){
-        console.log(res, document.querySelector('#testTextarea'));
-        var UxHash = res.default;
-        new UxHash('#testTextarea', [{key:'#',bg: '#0000ff66', color: 'transparent'},
-        {key:'@',bg: '#f500008f', color: 'transparent'}]);
-    });
+    new UxHash('#testTextarea', [{key:'#',bg: '#0000ff66', color: 'transparent'},
+    {key:'@',bg: '#f500008f', color: 'transparent'}]);
 </script>
 </html>

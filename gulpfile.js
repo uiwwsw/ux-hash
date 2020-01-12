@@ -1,6 +1,7 @@
 const { src, dest, parallel, watch, series } = require('gulp');
 const package = require('./package.json');
 const gulp = require('gulp');
+const gap = require('gulp-append-prepend');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
@@ -28,36 +29,51 @@ const browserSync = require('browser-sync').create();
 //         .pipe(browserSync.reload({ stream: true }));
 // }
 
-function js() {
-    return src('src/**/*.ts')
+function jsRegacy() {
+    return src('src/ts/index.ts')
         .pipe(sourcemaps.init())
         .pipe(tsProject())
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(concat(`js/${package.name}.js`))
+        .pipe(concat(`js/${package.name}.regacy.js`))
         .pipe(sourcemaps.write())
         .pipe(dest('dist'))
 }
 
-function jsMin() {
-    return src('src/**/*.ts')
+function jsRegacyMin() {
+    return src('src/ts/index.ts')
         .pipe(sourcemaps.init())
         .pipe(tsProject())
         .pipe(babel({
             presets: ['@babel/env']
         }))
         .pipe(uglify())
-        .pipe(concat(`js/${package.name}.min.js`))
+        .pipe(concat(`js/${package.name}.regacy.min.js`))
         .pipe(sourcemaps.write())
         .pipe(dest('dist'))
         .pipe(browserSync.reload({ stream: true }));
 }
 
+function js() {
+    return src('src/ts/index.ts')
+        .pipe(gap.prependText('export default '))
+        .pipe(sourcemaps.init())
+        .pipe(tsProject())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(uglify())
+        .pipe(concat(`js/${package.name}.js`))
+        .pipe(sourcemaps.write())
+        .pipe(dest('dist'))
+}
+
+
 function watching() {
-    js();
+    jsRegacy();
     // css();
-    watch('src/**/*.ts', js);
+    watch('src/**/*.ts', jsRegacy);
     // watch('src/**/*.scss', css);
 }
 
@@ -66,4 +82,4 @@ function browser() {
 }
 
 exports.watch = parallel(watching, browser);
-exports.default = series(jsMin, js);
+exports.default = series(jsRegacyMin, jsRegacy, js);

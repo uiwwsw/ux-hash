@@ -4,7 +4,7 @@
 ## Library to help you write hashtags in textarea
 
 ## 설치
-`npm i -S ux-hash` 또는 `https://unpkg.com/ux-hash/dist/js/ux-hash.min.js`
+`npm i -S ux-hash` 또는 `https://unpkg.com/ux-hash/dist/js/ux-hash.regacy.js`
 
 ### 사용방법
 
