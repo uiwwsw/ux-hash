@@ -10,24 +10,23 @@ const ts = require('gulp-typescript');
 const tsProject = ts.createProject('tsconfig.json');
 const browserSync = require('browser-sync').create();
 
-
-function css() {
-    return src('src/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(concat(`css/${package.name}.css`))
-        .pipe(sourcemaps.write())
-        .pipe(dest('dist'))
-}
-function cssMin() {
-    return src('src/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-        .pipe(concat(`css/${package.name}.min.css`))
-        .pipe(sourcemaps.write())
-        .pipe(dest('dist'))
-        .pipe(browserSync.reload({ stream: true }));
-}
+// function css() {
+//     return src('src/**/*.scss')
+//         .pipe(sourcemaps.init())
+//         .pipe(sass().on('error', sass.logError))
+//         .pipe(concat(`css/${package.name}.css`))
+//         .pipe(sourcemaps.write())
+//         .pipe(dest('dist'))
+// }
+// function cssMin() {
+//     return src('src/**/*.scss')
+//         .pipe(sourcemaps.init())
+//         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+//         .pipe(concat(`css/${package.name}.min.css`))
+//         .pipe(sourcemaps.write())
+//         .pipe(dest('dist'))
+//         .pipe(browserSync.reload({ stream: true }));
+// }
 
 function js() {
     return src('src/**/*.ts')
@@ -57,9 +56,9 @@ function jsMin() {
 
 function watching() {
     js();
-    css();
+    // css();
     watch('src/**/*.ts', js);
-    watch('src/**/*.scss', css);
+    // watch('src/**/*.scss', css);
 }
 
 function browser() {
@@ -67,4 +66,4 @@ function browser() {
 }
 
 exports.watch = parallel(watching, browser);
-exports.default = parallel(series(jsMin, js), css, cssMin);
+exports.default = series(jsMin, js);

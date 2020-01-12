@@ -1,8 +1,8 @@
 {
   "name": "ux-hash",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Library to help you write hashtags in textarea",
-  "main": "index.js",
+  "main": "dist/js/ux-hash.min.js",
   "scripts": {
     "start": "gulp watch",
     "build": "gulp && npm publish"
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
+    "@types/node": "^13.1.6",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
