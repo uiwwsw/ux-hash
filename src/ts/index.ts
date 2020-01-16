@@ -41,20 +41,19 @@ class UxHash {
         const wrapperElement = document.querySelector(querySelector) as HTMLDivElement;
         const textareaElement = wrapperElement.querySelector('textarea') as HTMLTextAreaElement;
         const displayElement = wrapperElement.querySelector('div') as HTMLDivElement;
-        const id = wrapperElement.className;
         const value = wrapperElement.querySelector('textarea')!.value;
         const keys = themes.map((theme: Theme) => theme.key);
         const colors = themes.map((theme: Theme) => theme.color);
         const bgs = themes.map((theme: Theme) => theme.bg);
         let res = '';
-        value.split('\n').forEach((line: string, i: number) => {
+        value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").split('\n').forEach((line: string, i: number) => {
             res += (i === 0 ? '' : '\n');
             line.split(' ').forEach((word: string, j: number) => {
                 res += (j === 0 ? '' : ' ');
                 const index = keys.indexOf(word[0]);
                 if (index === -1) {
                     res += word;
-                } else {
+                } else { 
                     res += `<span style="margin: -.1em;padding: 0 .1em;border-radius: 1em;color:${colors[index]};background:${bgs[index]};">${word}</span>`
                 }
             });
@@ -66,7 +65,7 @@ class UxHash {
 
     mask() {
         let res = '';
-        this.textareaElement.value.split('\n').forEach((line: string, i: number) => {
+        this.textareaElement.value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").split('\n').forEach((line: string, i: number) => {
             res += (i === 0 ? '' : '\n');
             line.split(' ').forEach((word: string, j: number) => {
                 res += (j === 0 ? '' : ' ');
